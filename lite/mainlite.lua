@@ -29,23 +29,14 @@ if InputService:GetPlatform() ~= Enum.Platform.Windows
 end
 
 local function githubreq(url)
-if not isfile("lite/"..url) then
-  local gh, rf
-  task.wait(10) function()
-    if not n then
-      print("error when connecting github, please wait...")
-    end)
-	gh, rf = pcall(function() return game:HttpGet("https://github.com/OneMinuteNoZa/CocaineLite/"..readfile("lite/config.lua").."/"..url, true end)
-		if not gh or rf == "404: Not Found" then
-			print("Failed to connect to github : lite/"..url.." : "..rf)
-		end)
-	readfile("lite/"..url)
-end
-
-        
-local function DLconfig(path)
-	if customassetcheck then
-		if not isfile(path) then
+local git = pcall(function() return game:HttpGet("https://github.com/OneMinuteNoZa/CocaineLite/"..readfile("lite/")true end)
+if not isfile("lite/"..git) then
+		local label = Instance.new("TextLabel")
+		label.size = UDim2.new(1, 0, 0, 40
+		
+		
+local function DLconfig()
+			if not isfile(path) then
 			task.spawn(function()
 				local textlabel = Instance.new("TextLabel")
 				textlabel.Size = UDim2.new(1, 0, 0, 36)
