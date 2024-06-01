@@ -17,49 +17,33 @@ local delfile = delfile or function(file) writefile(file, "") end
 
 local setidentity = syn and syn.set_thread_identity or set_thread_identity or setidentity or setthreadidentity or function() end
 local getidentity = syn and syn.get_thread_identity or get_thread_identity or getidentity or getthreadidentity or function() return 0 end
-local configjson = isfile("lite/config.json")
+local getcfile = isfile("lite/config.lua")
 
-if InputService:GetPlatform() ~= Enum.Platform.Windows
-  getgenv().getsynasset = nil
-  getgenv().getcustomasset = nil
-  --shitty stuffs
-  getsynasset = nil
-  getcustomasset = nil
-  --ion get this shit but apparently it's needed for synasset/customasset to work
+local function dll()
+  if not getcfile then writefile("lite/config.lua") else end)
+  local codineassets = {
+isfile("lite/main.lua")
+isfile("lite/config.lua")
+isfile("lite/mainlite.lua")
+}
+
+if not codineassets then
+  writefile({
+"lite/main.lua"
+"lite/config.lua"
+"lite/mainlite.lua""
+}) end
+
+appendfile({
+"lite/main.lua", "--The file was broken but has now been appended
+loadstring(game.HttpGet("https://raw.githubusercontent.com/RedEyedSkid/CodineLite/main/main.lua/"))()"
+
+"lite/config.lua", "print(11 + 11)"
+
+"lite/mainlite.lua, "print(1 + 1)") 
+})
 end
 
-local function githubreq(url)
-local git = pcall(function() return game:HttpGet("https://github.com/OneMinuteNoZa/CocaineLite/"..readfile("lite/")true end)
-if not isfile("lite/"..git) then
-		local label = Instance.new("TextLabel")
-		label.size = UDim2.new(1, 0, 0, 40
-		
-		
-local function DLconfig()
-			if not isfile(path) then
-			task.spawn(function()
-				local textlabel = Instance.new("TextLabel")
-				textlabel.Size = UDim2.new(1, 0, 0, 36)
-				textlabel.Text = "Downloading "..path
-				textlabel.BackgroundTransparency = 1
-				textlabel.TextStrokeTransparency = 0
-				textlabel.TextSize = 30
-				textlabel.Font = Enum.Font.SourceSans
-				textlabel.TextColor3 = Color3.new(1, 1, 1)
-				textlabel.Position = UDim2.new(0, 0, 0, -36)
-				textlabel.Parent = GuiLibrary.MainGui
-				repeat task.wait() until isfile(path)
-				textlabel:Destroy()
-			end)
-			local suc, req = pcall(function() return githubreq(path:gsub("vape/assets", "assets")) end)
-			if suc and req then
-				writefile(path, req)
-			else
-				return ""
-			end
-		end
-	end
-	return getcustomasset(path) 
-end
+end)
 
-
+dll()
